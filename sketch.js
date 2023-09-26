@@ -21,7 +21,7 @@ function ResetBird(b) {
 }
 
 function keyPressed() {
-  if (key == "a") {
+  if (key == " ") {
     console.log("space");
     bird.up();
   }
