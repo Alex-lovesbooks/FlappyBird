@@ -12,7 +12,7 @@ function Bird() {
   this.y = 100;
   this.gravity = 0.1;
   this.lift = -20;
-  this.velocity = 0;
+  this.velocity = 1;
   this.show = function () {
     fill(255);
     ellipse(this.y, this.x, 32, 32);
