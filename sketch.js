@@ -12,7 +12,7 @@ function draw() {
   if (frameCount % 40 == 0) {
     pipes.push(new Pipe());
   }
-  for (var i = pipes.lenght - 1; i >= 0; i--) {
+  for (var i = 0; i < pipes.lenght; i++) {
     pipes[i].show();
     pipes[i].update();
   }

@@ -1,4 +1,4 @@
-import { pipes } from "./sketch";
+// import { pipes } from "./sketch";
 
 function Pipe() {
   this.top = random(height / 2);
