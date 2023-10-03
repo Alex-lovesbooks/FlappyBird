@@ -8,11 +8,15 @@ function setup() {
 function draw() {
   background(0);
   if (frameCount % 100 == 0) {
-    pipes.push(new Pipe());
+    pipes.push(new Pipeup());
+    pipes.push(new Pipedown());
   }
   for (var i = 0; i < pipes.length; i++) {
-    pipes[i].update();
-    pipes[i].show();
+    pipesup[i].update();
+    pipesdown[i].update();
+
+    pipesup[i].show();
+    pipesdown[i].show();
   }
   bird.update();
   bird.show();

@@ -18,7 +18,7 @@ function Bird() {
     ellipse(this.y, this.x, 32, 32);
   };
   this.up = function () {
-    this.velocity += this.lift / 2;
+    this.velocity = this.lift / 2;
   };
 
   this.update = function () {
