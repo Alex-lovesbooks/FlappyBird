@@ -9,12 +9,12 @@ function draw() {
   background(0);
   bird.update();
   bird.show();
-  if (frameCount % 40 == 0) {
+  if (frameCount % 100 == 0) {
     pipes.push(new Pipe());
   }
-  for (var i = 0; i < pipes.lenght; i++) {
-    pipes[i].show();
+  for (var i = 0; i < pipes.length; i++) {
     pipes[i].update();
+    pipes[i].show();
   }
 }
 
