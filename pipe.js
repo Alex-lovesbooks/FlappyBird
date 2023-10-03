@@ -17,6 +17,10 @@ class Pipe {
   update() {
     this.y -= this.speed;
   }
+  outside_screen() {
+    if (this.y < -200) return true;
+    else return false;
+  }
 }
 
 class Pipeup extends Pipe {
