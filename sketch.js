@@ -13,12 +13,12 @@ function draw() {
     pipeup.push(new Pipeup());
     pipedown.push(new Pipedown());
   }
-  for (var i = 0; i < pipes.length; i++) {
-    pipesup[i].update();
-    pipesdown[i].update();
+  for (var i = 0; i < pipeup.length; i++) {
+    pipeup[i].update();
+    pipedown[i].update();
 
-    pipesup[i].show();
-    pipesdown[i].show();
+    pipeup[i].show();
+    pipedown[i].show();
   }
   bird.update();
   bird.show();
