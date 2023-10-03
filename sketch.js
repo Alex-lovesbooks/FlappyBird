@@ -1,15 +1,17 @@
-var pipes = [];
+var pipeup = [];
+var pipedown = [];
 function setup() {
   createCanvas(200, 300);
   bird = new Bird();
-  pipes.push(new Pipe());
+  pipeup.push(new Pipeup());
+  pipedown.push(new Pipedown());
 }
 
 function draw() {
   background(0);
   if (frameCount % 100 == 0) {
-    pipes.push(new Pipeup());
-    pipes.push(new Pipedown());
+    pipeup.push(new Pipeup());
+    pipedown.push(new Pipedown());
   }
   for (var i = 0; i < pipes.length; i++) {
     pipesup[i].update();

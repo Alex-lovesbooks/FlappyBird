@@ -31,6 +31,7 @@ function Pipedown() {
   this.update = function () {
     this.y -= this.speed;
   };
+}
 // function draw() {
 //   background(0);
 //   bird.update();
@@ -42,4 +43,4 @@ function Pipedown() {
 //     pipes[i].show();
 //     pipes[i].update();
 //   }
-// }
+/
