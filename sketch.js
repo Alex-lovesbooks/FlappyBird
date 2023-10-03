@@ -7,8 +7,6 @@ function setup() {
 
 function draw() {
   background(0);
-  bird.update();
-  bird.show();
   if (frameCount % 100 == 0) {
     pipes.push(new Pipe());
   }
@@ -16,6 +14,8 @@ function draw() {
     pipes[i].update();
     pipes[i].show();
   }
+  bird.update();
+  bird.show();
 }
 
 function ResetBird(b) {
