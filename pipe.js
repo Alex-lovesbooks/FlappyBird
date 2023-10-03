@@ -1,8 +1,8 @@
 // import { pipes } from "./sketch";
 
 function Pipe() {
-  this.top = random(height / 2);
-  this.bottom = random(height / 2);
+  this.top = random(height / 2 - 80, height / 2 - 48);
+  this.bottom = random(height / 2 - 80, height / 2 - 48);
   this.y = width;
   this.pipe_width = 20;
   this.speed = 1;
