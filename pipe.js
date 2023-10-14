@@ -10,6 +10,12 @@ class Pipe {
     this.speed = 1;
   }
 
+  hits() {
+    if (bird.x < this.pipe_height || bird.x > height - this.bottom)
+      if (bird.y > this.y && bird.y < this.y + this.pipe_width) return true;
+      else return false;
+  }
+
   show() {
     fill(255);
     rect(this.y, this.x, this.pipe_width, this.pipe_height);
