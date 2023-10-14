@@ -9,14 +9,6 @@ class Pipe {
 
     this.speed = 1;
   }
-  this.hits = function(bird){
-
-    if(bird.x < this.pipe_height || bird.x > height - this.bottom)
-     { if (bird.y > this.x && bird.y < this.y + this.pipe_width)
-          return true;}
-    return false;
-      
-  }
 
   show() {
     fill(255);

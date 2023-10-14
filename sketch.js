@@ -16,10 +16,6 @@ function draw() {
   for (var i = 0; i < pipes.length; i++) {
     pipes[i].update();
     pipes[i].show();
-
-    if (pipes[i].hits(bird)) {
-      console.log("hit");
-    }
   }
 
   var to_remove_pipes = [];
