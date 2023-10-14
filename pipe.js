@@ -12,8 +12,8 @@ class Pipe {
   this.hits = function(bird){
 
     if(bird.x < this.pipe_height || bird.x > height - this.bottom)
-     { if (bird.y > this.x && bird.y < this.y + this.pipe_width)
-          return true;}
+      if (bird.y > this.x && bird.y < this.y + this.pipe_width)
+          return true;
     return false;
       
   }
