@@ -8,16 +8,24 @@ class Pipe {
     this.pipe_height = 0;
 
     this.speed = 1;
+
+    this.highlight = false;
   }
 
   hits() {
     if (bird.x < this.pipe_height || bird.x > height - this.bottom)
-      if (bird.y > this.y && bird.y < this.y + this.pipe_width) return true;
-      else return false;
+      if (bird.y > this.y && bird.y < this.y + this.pipe_width) {
+        this.highlight = true;
+        return true;
+      } else {
+        this.highlight = false;
+        return false;
+      }
   }
 
   show() {
     fill(255);
+    if (this.highlight) fill(255, 0, 0);
     rect(this.y, this.x, this.pipe_width, this.pipe_height);
   }
   update() {
