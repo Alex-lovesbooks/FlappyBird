@@ -2,8 +2,14 @@
 
 class Pipe {
   constructor() {
-    this.y = 0;
+    // (0, 0) e in stanga sus
+    // (W, H) e in dreapta jos
+    // (x, y) - colt stanga sus
+    // (h, w) - colt dreapta jos
+
     this.x = 0;
+    this.y = 0;
+
     this.pipe_width = 0;
     this.pipe_height = 0;
 
@@ -12,27 +18,45 @@ class Pipe {
     this.highlight = false;
   }
 
-  hits() {
-    if (bird.x < this.pipe_height || bird.x > height - this.bottom)
-      if (bird.y > this.y && bird.y < this.y + this.pipe_width) {
-        this.highlight = true;
-        return true;
-      } else {
-        this.highlight = false;
-        return false;
-      }
+  // hits(bird) {
+  //   if (bird.x > s.x && bird.x < this.x + this.pipe_width) {
+  //     if (bird.y > this.y && bird.y < this.y + this.pipe_height) {
+  //       this.highlight = true;
+  //       console.log("t");
+  //       return true;
+  //     }
+  //   }
+  //   this.highlight = false;
+  //   console.log("x");
+  //   return false;
+  // }
+
+  hits(bird) {
+    this.highlight = false;
+
+    if (
+      bird.x > this.x - bird.radius &&
+      bird.x < this.x + this.pipe_width + bird.radius &&
+      bird.y > this.y - bird.radius &&
+      bird.y < this.y + this.pipe_height + bird.radius
+    ) {
+      this.highlight = true;
+    }
+    return this.highlight;
   }
 
   show() {
     fill(255);
-    if (this.highlight) fill(255, 0, 0);
-    rect(this.y, this.x, this.pipe_width, this.pipe_height);
+    if (this.highlight) {
+      fill(255, 0, 0);
+    }
+    rect(this.x, this.y, this.pipe_width, this.pipe_height);
   }
   update() {
-    this.y -= this.speed;
+    this.x -= this.speed;
   }
   outside_screen() {
-    if (this.y < -200) return true;
+    if (this.x < -200) return true;
     else return false;
   }
 }
@@ -40,8 +64,8 @@ class Pipe {
 class Pipeup extends Pipe {
   constructor() {
     super();
-    this.y = width;
-    this.x = 0;
+    this.x = width;
+    this.y = 0;
     this.pipe_width = 20;
     this.pipe_height = random(height / 2 - 100, height / 2 - 32);
   }
@@ -50,11 +74,11 @@ class Pipedown extends Pipe {
   constructor() {
     super();
 
-    this.bottom = random(height / 2 - 100, height / 2 - 32);
+    var bottom = random(height / 2 - 100, height / 2 - 32);
 
-    this.y = width;
-    this.x = height - this.bottom;
+    this.y = height - bottom;
+    this.x = width;
     this.pipe_width = 20;
-    this.pipe_height = this.bottom;
+    this.pipe_height = bottom;
   }
 }
